@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ContactListItem = ({ onRemove, name, number, id }) => {
   return (
     <li>
@@ -12,3 +14,10 @@ const ContactListItem = ({ onRemove, name, number, id }) => {
 };
 
 export default ContactListItem;
+
+ContactListItem.propTypes = {
+  onRemove: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};

@@ -1,4 +1,5 @@
 import ContactListItem from './ContactListItem';
+import PropTypes from 'prop-types';
 
 const ContactList = ({ setPhonebook, phonebook, filteredContacts }) => {
   const removeContact = id => {
@@ -31,3 +32,12 @@ const ContactList = ({ setPhonebook, phonebook, filteredContacts }) => {
 };
 
 export default ContactList;
+
+ContactList.propTypes = {
+  setPhonebook: PropTypes.func.isRequired,
+  phonebook: PropTypes.shape({
+    contacts: PropTypes.array.isRequired,
+    filter: PropTypes.string.isRequired,
+  }).isRequired,
+  filteredContacts: PropTypes.array.isRequired,
+};
