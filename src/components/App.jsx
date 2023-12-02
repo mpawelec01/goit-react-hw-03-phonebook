@@ -4,7 +4,7 @@ import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
 
 export const App = () => {
-  const storedItems = JSON.parse(localStorage.getItem('contacts'));
+  const storedItems = JSON.parse(localStorage.getItem('contacts')) || [];
 
   const [phonebook, setPhonebook] = useState({
     contacts: storedItems,
